@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "b8e87d7b-fb57-4376-8afe-6714618cf623",
+		"name": "rbenitezBanking",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "18698727"
+	},
+	"item": [
+		{
+			"name": "Customer-Service",
+			"item": [
+				{
+					"name": "AllCustomers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8081/customer/all"
+					},
+					"response": []
+				},
+				{
+					"name": "SaveCustomer",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customerType\": \"CLASSIC\",\r\n  \"dni\": \"12345678\",\r\n  \"names\": \"Juan\",\r\n  \"lastName\": \"Pérez Garcia\",\r\n  \"address\": \"Av. Principal 123\",\r\n  \"phone\": \"987654321\",\r\n  \"email\": \"juanperez@gmail.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/customer"
+					},
+					"response": []
+				},
+				{
+					"name": "SaveCustomer Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-user-id",
+								"value": "rober",
+								"type": "text"
+							},
+							{
+								"key": "x-consumer-id",
+								"value": "consumer",
+								"type": "text"
+							},
+							{
+								"key": "x-transaction-id",
+								"value": "transaction",
+								"type": "text"
+							},
+							{
+								"key": "x-caller-id",
+								"value": "caller",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customerType\": \"CLASSIC\",\r\n  \"dni\": \"12345678\",\r\n  \"names\": \"Juan\",\r\n  \"lastName\": \"Pérez Garcia\",\r\n  \"address\": \"Av. Principal 123\",\r\n  \"phone\": \"987654321\",\r\n  \"email\": \"juanperez@gmail.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8081/clientes"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Credit-Service",
+			"item": []
+		},
+		{
+			"name": "Account-Service",
+			"item": [
+				{
+					"name": "obtener-account",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8585/hello"
+					},
+					"response": []
+				},
+				{
+					"name": "save account",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-user-id",
+								"value": "rober",
+								"type": "text"
+							},
+							{
+								"key": "x-consumer-id",
+								"value": "consumer",
+								"type": "text"
+							},
+							{
+								"key": "x-transaction-id",
+								"value": "transaction",
+								"type": "text"
+							},
+							{
+								"key": "x-caller-id",
+								"value": "caller",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"typeAccount\": \"AHORRO\",\r\n  \"idClient\": \"6768gwef9g3f3hf3hi\",\r\n  \"openingBalance\": 1500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8082/accounts"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction-Service",
+			"item": []
+		},
+		{
+			"name": "Consulting-Service",
+			"item": []
+		}
+	]
+}
